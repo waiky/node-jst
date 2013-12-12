@@ -1,28 +1,49 @@
 {
-  "name": "jst"
-, "description": "A Javascript template pre-compiler."
-, "version": "0.0.1-alpha.5"
-, "keywords": ["precompiler", "template", "backbone", "jammit"]
-, "main": "./lib/jst.js"
-, "homepage": "https://github.com/aliem/node-jst.git"
-, "author": "Lorenzo Giuliani"
-, "repository": {
-    "type": "git"
-  , "url": "https://github.com/aliem/node-jst.git"
-  }
-, "dependencies": {
+  "name": "jst",
+  "description": "A Javascript template pre-compiler.",
+  "version": "0.0.1-alpha.5",
+  "keywords": [
+    "precompiler",
+    "template",
+    "backbone",
+    "jammit"
+  ],
+  "main": "./lib/jst.js",
+  "homepage": "https://github.com/aliem/node-jst.git",
+  "author": {
+    "name": "Lorenzo Giuliani"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliem/node-jst.git"
+  },
+  "dependencies": {
     "underscore": ">=1.1.2"
-  }
-, "devDependencies": {
-    "should": "*"
-  , "mocha": "*"
-  , "handlebars": "*"
-  , "hogan.js": "*"
-  , "whiskers": "*"
-  , "minstache": "*"
-  , "marked": "*"
-  }
-, "licenses": [ 
-    { "type": "MIT", "url": "http://opensource.org/licenses/mit-license.html" }
-  ]
+  },
+  "devDependencies": {
+    "should": "*",
+    "mocha": "*",
+    "handlebars": "*",
+    "hogan.js": "*",
+    "whiskers": "*",
+    "minstache": "*",
+    "marked": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.html"
+    }
+  ],
+  "readme": "## **J**ava**S**cript**T**emplate (pre-compiler)\n\nSomething like [Jammit](http://documentcloud.github.com/jammit/) but only for your Backbone templates.\n\nThis is a small library for [Node.js](http://nodejs.org) I wrote during holidays so, it's a work in progress, most likey won't work as expected.\n\n**JST** will compile a directory full of\n\n- [Handlebars](http://handlebarsjs.com)\n- [Hogan.js](https://twitter.github.com/hogan.js)\n- [Underscore](https://documentcloud.github.com/underscore)\n- [Whiskers.js](https://github.com/gsf/whiskers.js)\n- [Minstache](https://github.com/visionmedia/minstache)\n\ntemplates into a single `templates.js` to use on the frontend\n\nConfiguration:\n\n``` js\nvar jst = require('jst');\njst.compiler = 'handlebars'; // or 'underscore' (default) or 'hogan'\n```\n\nExample One-time Compile:\n\n``` js\njst.compile(__dirname + '/templates', __dirname + '/public/javascripts/', function() {\n  return console.log('recompiled ' + '/javascripts/admin/templates.js'.red);\n});\n```\n\nExample directory watcher (useful in a development environment):\n\n``` js\njst.watcher(__dirname + '/templates', __dirname + '/public/javascripts/', function() {\n  return console.log('recompiled ' + '/javascripts/admin/templates.js'.red);\n});\n```\n\nYou can access to the template functions using the global namespace `JST`:\n\n``` js\nvar teplate = JST.foo({\n  template: 'context'\n}, template_options);\n\n$('#foo').htm(template);\n```\n\n## Custom Namespace\n\nThe global namespace can be costumized using the jst.namespace var:\n\n``` js\nvar jst = require('jst');\n\njst.namespace = 'MyCustomNameSpace'\n```\n\n\n## TODO\n\n1. Write tests\n2. Write more tests\n3. rework the file watcher using inotify/fswatcher\n4. use it daily\n\n### Contribute\n\nFork the project.  \nMake your feature addition or bug fix.  \nSend me a pull request. Bonus points for topic branches.  \nBump the version number, if you really have to, in a separate commit.\n\n\n### License\n\njst is provided as-is under the [MIT](http://opensource.org/licenses/mit-license.html) License.\n\nCopyright (c) 2011 Lorenzo Giuliani <lorenzo@frenzart.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "readmeFilename": "Readme.md",
+  "bugs": {
+    "url": "https://github.com/aliem/node-jst/issues"
+  },
+  "_id": "jst@0.0.1-alpha.5",
+  "dist": {
+    "shasum": "1ef70196b717b5878dea362fe98b33d001394730"
+  },
+  "_resolved": "git://github.com/aliem/node-jst#38e0cc3c093589ecc142e4c5e7de527b5e36a4e4",
+  "_from": "node-jst@git://github.com/aliem/node-jst"
 }
