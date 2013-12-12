@@ -18,7 +18,8 @@
     "url": "https://github.com/aliem/node-jst.git"
   },
   "dependencies": {
-    "underscore": ">=1.1.2"
+    "underscore": ">=1.1.2",
+    "walk": "~2.2.1"
   },
   "devDependencies": {
     "should": "*",
